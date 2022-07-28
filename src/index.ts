@@ -38,7 +38,8 @@ async function bootstrap(){
     //await server.start()
     server.applyMiddleware({app})
     //apply middle to server
-    app.listen({port: 4000 }, ()=>{
+    const PORT =process.env.PORT || 4000
+    app.listen({port: PORT }, ()=>{
         console.log("App is listening on http://localhost:4000")
     });
     //app.listen on express server
