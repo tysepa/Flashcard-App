@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import { ApolloServer } from "apollo-server-express";
 import { ApolloServerPluginLandingPageGraphQLPlayground, ApolloServerPluginLandingPageProductionDefault } from "apollo-server-core";
 import{ resolvers } from "./resolvers"
+import { connectToMongo } from "./utils/mongo";
 
 
 async function bootstrap(){
@@ -42,6 +43,7 @@ async function bootstrap(){
     });
     //app.listen on express server
     //connect to db
+    connectToMongo();
 }
 
 bootstrap();
